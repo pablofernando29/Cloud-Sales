@@ -57,7 +57,7 @@ class Sales extends React.Component{
                                     <div className="form-group">
                                         <label className="control-label">Cliente</label>
                                         <select name="client" id="client" className="form-control">
-                                            <option value="0">--Seleccione</option>
+                                            <option value="0">Seleccionar</option>
                                             {clientList.map(client => (
                                                 <option key={client.id} value={client.id}>
                                                     {client.name}
@@ -79,7 +79,7 @@ class Sales extends React.Component{
                                     <div className="form-group">
                                         <label className="control-label">Producto</label>
                                         <select name="product" id="product" className="form-control">
-                                            <option value="0">--Seleccione</option>
+                                            <option value="0">Seleccionar</option>
                                             {productList.map(product => (
                                                 <option key={product.id} value={product.id}>
                                                     {product.name}
@@ -166,15 +166,16 @@ class Sales extends React.Component{
                                 <div className="col-6">
                                     <label className="control-label">Tipo de Venta</label>
                                     <select className="form-control" name="type" id="type">
-                                        <option value="0">-- --Seleccione</option>
+                                        <option value="0">Seleccionar</option>
                                     </select>
                                 </div>
                                 <div className="col-6">
                                     <label className="control-label">Tipo de Documento</label>
                                     <select className="form-control" name="document" id="document">
-                                        <option value="0">-- --Seleccione</option>
+                                        <option value="0">Seleccionar</option>
                                     </select>
-                                    <button className="btn btn-primary btn-block"><i className='fa fa-save'></i> Guardar Pedido</button>
+
+                                    <button className="btn btn-primary"><i className='fa fa-save'></i>Guardar Pedido</button>
                                 </div>
                                 <div className="col-12 text-center">
                                 </div>

@@ -37,10 +37,10 @@ const ProductsAdd = () => {
               fetch(config.apiURL+"products", requestOptions).then((response) => {
                 switch(response.status){
                   case 400:
-                    console.log("consulta mal formada");
+                    console.log("Consulta mal formada");
                     break;
                   case 403:
-                    console.log("acceso prohibido");
+                    console.log("Acceso no permitido");
                     break;
                   default:
                     //
@@ -85,7 +85,7 @@ const ProductsAdd = () => {
                                 </div>
                                 <div className="col-4">
                                     <div className="form-group">
-                                        <label htmlFor="MSU" className="control-label">Un. Mini. de Venta</label>
+                                        <label htmlFor="MSU" className="control-label">Unidad Min. de Venta</label>
                                         <input type="number" name="MSU" id="MSU" className="form-control" required />
                                     </div>
                                 </div>
@@ -103,13 +103,13 @@ const ProductsAdd = () => {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-group">
-                                        <label htmlFor="MDPrice" className="control-label">Maximo Descuento Precio</label>
+                                        <label htmlFor="MDPrice" className="control-label">Precio Máximo Descuento</label>
                                         <input type="number" name="MDPrice" id="MDPrice" className="form-control" required />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-group">
-                                        <label htmlFor="MDPercentage" className="control-label">Maximo Descuento Porcentaje</label>
+                                        <label htmlFor="MDPercentage" className="control-label">Porcentaje Máximo Descuento</label>
                                         <input type="number" name="MDPercentage" id="MDPercentage" className="form-control" max="50" min="0" required />
                                     </div>
                                 </div>

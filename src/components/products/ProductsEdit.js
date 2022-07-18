@@ -12,7 +12,7 @@ const ProductsEdit = () => {
         var hasChanges = productName.value.length > 0 ||  MSU.value.length > 0 || price.value.length > 0 || stock.value.length > 0 ||
             MDPrice.value.length > 0 || MDPercentage.value.length > 0;
         if(hasChanges){
-            if(window.confirm("Existen cambios sin guardar. ¿Seguro de querer cancelar?")){
+            if(window.confirm("Existen cambios sin guardar. ¿Esta seguro de cancelar?")){
                 navigate("/products");
             }
         } else {
@@ -38,17 +38,17 @@ const ProductsEdit = () => {
               fetch(config.apiURL+"products/"+productData.id, requestOptions).then((response) => {
                 switch(response.status){
                   case 400:
-                    console.log("consulta mal formada");
+                    console.log("Error en la consulta");
                     break;
                   case 403:
-                    console.log("acceso prohibido");
+                    console.log("Acceso no permitido");
                     break;
                   default:
                     //
                 }
                 return response.json();
               }).then((result) => {
-                  window.alert("Actualizacion existosa");
+                  window.alert("Actualización existosa");
                   navigate("/products");
               })
         }
@@ -61,7 +61,7 @@ const ProductsEdit = () => {
                     <div className="container-fluid">
                         <div className="row mb-2">
                             <div className="col-sm-6">
-                                <h1>Incorporación de Producto</h1>
+                                <h1>Añadir Producto</h1>
                             </div>
                             <div className="col-sm-6">
                                 <ol className="breadcrumb float-sm-right">
@@ -86,7 +86,7 @@ const ProductsEdit = () => {
                                 </div>
                                 <div className="col-4">
                                     <div className="form-group">
-                                        <label htmlFor="MSU" className="control-label">Un. Mini. de Venta</label>
+                                        <label htmlFor="MSU" className="control-label">Unidad Min. de Venta</label>
                                         <input type="number" name="MSU" id="MSU" className="form-control" defaultValue={productData.MSU} required />
                                     </div>
                                 </div>
@@ -104,13 +104,13 @@ const ProductsEdit = () => {
                                 </div>
                                 <div className="col-6">
                                     <div className="form-group">
-                                        <label htmlFor="MDPrice" className="control-label">Maximo Descuento Precio</label>
+                                        <label htmlFor="MDPrice" className="control-label">Máximo Descuento Precio</label>
                                         <input type="number" name="MDPrice" id="MDPrice" className="form-control" defaultValue={productData.MDPrice} required />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-group">
-                                        <label htmlFor="MDPercentage" className="control-label">Maximo Descuento Porcentaje</label>
+                                        <label htmlFor="MDPercentage" className="control-label">Máximo Descuento Porcentaje</label>
                                         <input type="number" name="MDPercentage" id="MDPercentage" defaultValue={productData.MDPercentage} className="form-control" max="50" min="0" required />
                                     </div>
                                 </div>

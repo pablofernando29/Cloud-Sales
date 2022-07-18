@@ -51,15 +51,15 @@ const Login = () => {
       fetch(config.apiURL+"login", requestOptions).then((response) => {
         switch(response.status){
           case 400:
-            showMessage(true, "Consulta mal formada");
+            showMessage(true, "Error en la consulta");
             changeButtonState(button, true);
             break;
           case 403:
-            showMessage(true, "Acceso prohibido");
+            showMessage(true, "Acceso no permitido");
             changeButtonState(button, true);
             break;
           case 404:
-              showMessage(true, "Nombre de usuario y/o contraseña incorrectos");
+              showMessage(true, "Nombre de usuario o contraseña incorrectos");
               changeButtonState(button, true);
               break;
           default:
@@ -68,7 +68,7 @@ const Login = () => {
         return response.json();
       }).then((result) => {
         if(!result.data[0].active){
-          showMessage(true, "El usuario no se encuentra activo. Acceso denegado");
+          showMessage(true, "El usuario no se encuentra activo. Acceso no concedido");
           changeButtonState(button, true);
           return;
         }
@@ -114,10 +114,8 @@ const Login = () => {
               </div>
             </div>
             <div className="row">              
-              <div className="col-12">
-                <button type="submit" className="btn btn-primary btn-block">
-                  <i className="fa fa-sign-in"></i>&nbsp;&nbsp;&nbsp; Acceder                  
-                </button>
+              <div className='col-12 text-center'>
+              <button className='btn btn-primary'><i className="fa fa-sing-in"></i>Acceder</button>
               </div>
             </div>
           </form>

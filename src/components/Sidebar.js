@@ -21,12 +21,12 @@ const Sidebar = () => {
                         <li className="nav-header">ACCESOS</li>
                         <li className="nav-item">
                             <Link to="/sales"  className="nav-link">
-                                <i className="nav-icon fas fa-cart-shopping" />
+                                <i className="fas fa-shopping-cart" />
                                 <p>Ventas</p>
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/sales"  className="nav-link">
+                            <Link to="/clients"  className="nav-link">
                                 <i className="nav-icon fas fa-user" />
                                 <p>Clientes</p>
                             </Link>
@@ -38,7 +38,7 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/sales"  className="nav-link">
+                            <Link to="/users"  className="nav-link">
                                 <i className="nav-icon fas fa-users" />
                                 <p>Usuarios</p>
                             </Link>

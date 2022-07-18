@@ -18,11 +18,11 @@ const ProductsAdmin = () => {
         fetch(config.apiURL+"products/"+config.operatorId, requestOptions).then((response) => {
             return response.json();
         }).then((result) => {
-            // this.setState({ productList: result.data.map((product) => { return product; }) });
+             //this.setState({ productList: result.data.map((product) => { return product; }) });
             let productList = result.data.map((product) => { return product; });
             let rowData;
             if(productList.length === 0){
-                rowData = (<tr><td colSpan="4" className="text-center">No existen productos</td></tr>);
+                rowData = (<tr><td colSpan="4" className="text-center">Productos inexistentes</td></tr>);
             } else {
                 rowData = productList.map(p => {
                     let button;
@@ -63,7 +63,7 @@ const ProductsAdmin = () => {
                 return response.json();
             }).then((result) => {
                 updateProducts();
-                window.alert("Deshabilitación completada");
+                window.alert("Desactivación completada");
             });   
         }
     }
@@ -102,17 +102,17 @@ const ProductsAdmin = () => {
                 <div className="content-wrapper">
                     <section className="content-header">
                     <div className="container-fluid">
-                        <div className="row mb-2">
-                            <div className="col-sm-6">
-                                <h1>Panel de Ventas</h1>
-                            </div>
-                            <div className="col-sm-6">
-                                <ol className="breadcrumb float-sm-right">
-                                    <li className="breadcrumb-item"><a href="/">Cloud Sales</a></li>
-                                    <li className="breadcrumb-item active">Productos</li>
-                                </ol>
-                            </div>
+                    <div className="row mb-2">
+                        <div className="col-sm-6">
+                            <h1>Panel de Ventas</h1>
                         </div>
+                        <div className="col-sm-6">
+                            <ol className="breadcrumb float-sm-right">
+                                <li className="breadcrumb-item"><a href="/">Cloud Sales</a></li>
+                                <li className="breadcrumb-item active">Productos</li>
+                            </ol>
+                        </div>
+                    </div>
                     </div>
                     </section>
                     <section className="content">
@@ -121,21 +121,21 @@ const ProductsAdmin = () => {
                                 <Link to="/products/add" className="btn btn-success"><i className="fas fa-plus"></i> Nuevo</Link>
                             </div>
                             <div className="card-body">
-                                <div className="row">
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Producto</th>
-                                                <th>Precio Unitario</th>
-                                                <th>Stock Actual</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                {rowsData}
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div className="row">
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Precio Unitario</th>
+                                            <th>Stock Actual</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {rowsData}
+                                    </tbody>
+                                </table>
+                            </div>
                             </div>
                         </div>
                     </section>
