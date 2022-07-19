@@ -77,7 +77,7 @@ const UsersEdit = () => {
                                 </div>
                                 <div className="col-4">
                                     <div className="form-group">
-                                        <label htmlFor="nickname" className="control-label">Apodo</label>
+                                        <label htmlFor="nickname" className="control-label">Nickname</label>
                                         <input type="text" name="nickname" id="nickname" className="form-control" defaultValue={userData.nickname} required />
                                     </div>
                                 </div>
